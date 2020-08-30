@@ -374,7 +374,7 @@ try {
 *!*
   if (err instanceof ReferenceError) {
 */!*
-    alert('ReferenceError'); //  정의되지 않은 변수에 접근하여 "ReferenceError" 발생
+    alert('ReferenceError'); //  정의되지 않은 변수에 접근하여 'ReferenceError' 발생
   }
 }
 ```

@@ -1,16 +1,16 @@
-# CSS-animations
+# CSS 애니메이션
 
-CSS animations allow to do simple animations without JavaScript at all.
+CSS 애니메이션을 사용하면 자바스크립트 없이도 간단한 애니메이션을 만들 수 있습니다.
 
-JavaScript can be used to control CSS animation and make it even better with a little of code.
+자바스크립트는 CSS 애니메이션을 제어하고 보다 짧은 코드로 훨씬 더 효과적인 애니메이션을 만듭니다.
 
-## CSS transitions [#css-transition]
+## CSS 트랜지션 [#css-transition]
 
-The idea of CSS transitions is simple. We describe a property and how its changes should be animated. When the property changes, the browser paints the animation.
+CSS 트랜지션의 원리는 간단합니다. 프로퍼티에 어떻게 애니메이션 시킬지에 대한 값을 입력하면 됩니다. 입력한 프로퍼티가 변할 때, 브라우저에 애니메이션이 보이게 됩니다.
 
-That is: all we need is to change the property. And the fluent transition is made by the browser.
+즉, 프로퍼티를 변하게 해야 합니다. 그래야 브라우저를 통해 자연스러운 전환이 됩니다.
 
-For instance, the CSS below animates changes of `background-color` for 3 seconds:
+예를 들어 아래에 있는 CSS는 3초 동안 `background-color`를 변하게 합니다.
 
 ```css
 .animated {
@@ -19,12 +19,12 @@ For instance, the CSS below animates changes of `background-color` for 3 seconds
 }
 ```
 
-Now if an element has `.animated` class, any change of `background-color` is animated during 3 seconds.
+이제 어떤 요소가 `.animated` 클래스를 가지고 있다면,  `background-color`는 3초 동안 변하게 됩니다.
 
-Click the button below to animate the background:
+아래 버튼을 클릭해 배경을 변화시켜보세요.
 
 ```html run autorun height=60
-<button id="color">Click me</button>
+<button id="color">클릭하기</button>
 
 <style>
   #color {
@@ -40,19 +40,19 @@ Click the button below to animate the background:
 </script>
 ```
 
-There are 4 properties to describe CSS transitions:
+CSS 프로퍼티와 관련된 프로퍼티 네 가지는 다음과 같습니다.
 
 - `transition-property`
 - `transition-duration`
 - `transition-timing-function`
 - `transition-delay`
 
-We'll cover them in a moment, for now let's note that the common `transition` property allows to declare them together in the order: `property duration timing-function delay`, and also animate multiple properties at once.
+이 네 가지 프로퍼티는 잠시 후에 다루도록 하고, 지금은 흔히 쓰이는 `transition` 프로퍼티가 어떤 순서대로 네 가지 프로퍼티를 선언하는지 알아봅시다. `property duration timing-function delay`의 순서로 한 번에 선언이 가능합니다.
 
-For instance, this button animates both `color` and `font-size`:
+예를 들어 아래의 버튼은 `color`와 `font-size`에 애니메이션 효과가 나타납니다.
 
 ```html run height=80 autorun no-beautify
-<button id="growing">Click me</button>
+<button id="growing">클릭하기</button>
 
 <style>
 #growing {
@@ -70,29 +70,29 @@ growing.onclick = function() {
 </script>
 ```
 
-Now let's cover animation properties one by one.
+이제 애니메이션 프로퍼티에 대해 하나씩 살펴봅시다.
 
-## transition-property
+## 'transition-property' 프로퍼티
 
-In `transition-property` we write a list of property to animate, for instance: `left`, `margin-left`, `height`, `color`.
+`transition-property` 프로퍼티를 통해 `left`, `margin-left`, `height`, `color`와 같은 애니메이션을 위한 프로퍼티 목록을 작성할 수 있습니다.
 
-Not all properties can be animated, but [many of them](http://www.w3.org/TR/css3-transitions/#animatable-properties-). The value `all` means "animate all properties".
+모든 프로퍼티가 애니메이션 효과를 나타낼 순 없지만, [많은 프로퍼티](http://www.w3.org/TR/css3-transitions/#animatable-properties-)가 가능합니다. 프로퍼티의 값인 `all`은 모든 프로퍼티가 전환될 수 있음을 의미합니다.
 
-## transition-duration
+## 'transition-duration' 프로퍼티
 
-In `transition-duration` we can specify how long the animation should take. The time should be in [CSS time format](http://www.w3.org/TR/css3-values/#time): in seconds `s` or milliseconds `ms`.
+`transition-duration` 프로퍼티를 통해 애니메이션 시간이 얼마나 걸릴지 설정할 수 있습니다. 시간은 [CSS 시간 단위](http://www.w3.org/TR/css3-values/#time)인 초 단위를 나타내는 `s` 또는 밀리초 단위를 나타내는 `ms`를 사용해야 합니다.
 
-## transition-delay
+## 'transition-delay' 프로퍼티
 
-In `transition-delay` we can specify the delay *before* the animation. For instance, if  `transition-delay: 1s`, then animation starts after 1 second after the change.
+`transition-delay` 프로퍼티를 통해 애니메이션 *시작 전*의 지연 시간을 설정할 수 있습니다. 예를 들어 `transition-delay: 1s`이면, 애니메이션은 1초 후에 나타나게 됩니다.
 
-Negative values are also possible. Then the animation starts from the middle. For instance, if `transition-duration` is `2s`, and the delay is `-1s`, then the animation takes 1 second and starts from the half.
+음의 값도 가능합니다. 그러면 애니메이션은 중간부터 시작하게 됩니다. 예를 들어 `transition-duration`이 `2s`이고, 지연 시간은 `-1s`일 때, 애니메이션은 1초가 걸리고 딱 중간부터 시작합니다.
 
-Here's the animation shifts numbers from `0` to `9` using CSS `translate` property:
+여기 CSS `translate` 프로퍼티를 사용하여 `0`부터 `9`까지 숫자가 변하는 애니메이션이 있습니다.
 
 [codetabs src="digits"]
 
-The `transform` property is animated like this:
+`transform` 프로퍼티는 다음과 같이 작성되었습니다.
 
 ```css
 #stripe.animate {
@@ -102,25 +102,25 @@ The `transform` property is animated like this:
 }
 ```
 
-In the example above JavaScript adds the class `.animate` to the element -- and the animation starts:
+위의 예시에서 자바스크립트는 요소에 `.animate`라는 이름의 클래스를 추가했습니다. 그리고 애니메이션이 나타납니다.
 
 ```js
 stripe.classList.add('animate');
 ```
 
-We can also start it "from the middle", from the exact number, e.g. corresponding to the current second, using the negative `transition-delay`.
+또한 `transition-delay`에서 음의 값을 사용하여, 특정 숫자에서(예: 현재 2초에 해당하는 숫자) '중간부터' 시작할 수 있다.
 
-Here if you click the digit -- it starts the animation from the current second:
+여기 숫자를 클릭하면 현재 2초에 해당하는 숫자부터 애니메이션이 시작될 것입니다.
 
 [codetabs src="digits-negative-delay"]
 
-JavaScript does it by an extra line:
+자바스크립트에서는 위의 내용을 별도의 행으로 실행합니다.
 
 ```js
 stripe.onclick = function() {
   let sec = new Date().getSeconds() % 10;
 *!*
-  // for instance, -3s here starts the animation from the 3rd second
+  // 예를 들어, 여기에서의 -3s는 3초부터 애니메이션을 시작합니다.
   stripe.style.transitionDelay = '-' + sec + 's';
 */!*
   stripe.classList.add('animate');
